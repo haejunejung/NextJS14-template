@@ -19,7 +19,7 @@ interface HeaderProps {
   bottom?: Property.Bottom;
 }
 
-const Header = emotionStyled.head<HeaderProps>((props: HeaderProps) => {
+const Header = emotionStyled.header<HeaderProps>((props: HeaderProps) => {
   return {
     display: 'flex',
     flex: props.flex,
