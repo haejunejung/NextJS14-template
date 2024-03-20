@@ -18,7 +18,7 @@ interface VStackProps {
   bottom?: Property.Bottom;
 }
 
-export const HStack = emotionStyled.div<VStackProps>((props: VStackProps) => {
+const HStack = emotionStyled.div<VStackProps>((props: VStackProps) => {
   return {
     display: 'flex',
     flexDirection: 'row',
@@ -35,3 +35,5 @@ export const HStack = emotionStyled.div<VStackProps>((props: VStackProps) => {
     bottom: props.bottom,
   };
 });
+
+export default HStack;
