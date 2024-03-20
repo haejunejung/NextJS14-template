@@ -9,4 +9,7 @@ echo '******************************************'
 echo '******************************************'
 echo '******************************************'
 
-npx lint-staged
+yarn run format
+yarn run format:fix
+yarn run lint
+yarn run lint-fix

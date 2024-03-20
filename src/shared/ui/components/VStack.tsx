@@ -18,7 +18,7 @@ interface VStackProps {
   bottom?: Property.Bottom;
 }
 
-export const VStack = emotionStyled.div<VStackProps>((props: VStackProps) => {
+const VStack = emotionStyled.div<VStackProps>((props: VStackProps) => {
   return {
     display: 'flex',
     flexDirection: 'column',
@@ -35,3 +35,5 @@ export const VStack = emotionStyled.div<VStackProps>((props: VStackProps) => {
     bottom: props.bottom,
   };
 });
+
+export default VStack;
