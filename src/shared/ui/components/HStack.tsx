@@ -1,9 +1,10 @@
-'use client';
-
-import emotionStyled from '@emotion/styled';
 import {Property} from 'csstype';
+import {ReactNode} from 'react';
 
-interface VStackProps {
+/* eslint-disable react/require-default-props */
+
+interface HStackProps {
+  children: ReactNode;
   flex?: Property.Flex;
   backgroundColor?: Property.BackgroundColor;
   paddingVertical?: Property.Padding;
@@ -18,22 +19,42 @@ interface VStackProps {
   bottom?: Property.Bottom;
 }
 
-const HStack = emotionStyled.div<VStackProps>((props: VStackProps) => {
-  return {
-    display: 'flex',
-    flexDirection: 'row',
-    flex: props.flex,
-    backgroundColor: props.backgroundColor,
-    padding: `${props.paddingVertical} ${props.paddingHorizontal}`,
-    gap: props.gap,
-    alignItems: props.alignItems,
-    justifyContent: props.justifyContent,
-    width: props.width,
-    height: props.hegiht,
-    position: props.position,
-    top: props.top,
-    bottom: props.bottom,
-  };
-});
+function HStack({
+  children,
+  flex,
+  backgroundColor,
+  paddingVertical,
+  paddingHorizontal,
+  gap,
+  alignItems,
+  justifyContent,
+  width,
+  hegiht,
+  position,
+  top,
+  bottom,
+}: HStackProps) {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        flex,
+        backgroundColor,
+        padding: `${paddingVertical} ${paddingHorizontal}`,
+        gap,
+        alignItems,
+        justifyContent,
+        width,
+        height: hegiht,
+        position,
+        top,
+        bottom,
+      }}
+    >
+      {children}
+    </div>
+  );
+}
 
 export default HStack;

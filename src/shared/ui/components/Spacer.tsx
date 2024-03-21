@@ -1,8 +1,7 @@
-'use client';
-
-import emotionStyled from '@emotion/styled';
 import {Property} from 'csstype';
 import {CSSProperties} from 'react';
+
+/* eslint-disable react/require-default-props */
 
 interface SpacerProps {
   backgroundColor?: Property.BackgroundColor;
@@ -15,16 +14,29 @@ interface SpacerProps {
   style?: CSSProperties;
 }
 
-const Spacer = emotionStyled.div<SpacerProps>((props: SpacerProps) => {
-  return {
-    display: 'block',
-    backgroundColor: props.backgroundColor,
-    padding: `${props.paddingVertical} ${props.paddingHorizontal}`,
-    margin: `${props.marginVertical} ${props.marginHorizontal}`,
-    width: props.width,
-    height: props.height,
-    ...props.style,
-  };
-});
+function Spacer({
+  backgroundColor,
+  paddingVertical,
+  paddingHorizontal,
+  marginVertical,
+  marginHorizontal,
+  width,
+  height,
+  style,
+}: SpacerProps) {
+  return (
+    <div
+      style={{
+        display: 'block',
+        backgroundColor,
+        padding: `${paddingVertical} ${paddingHorizontal}`,
+        margin: `${marginVertical} ${marginHorizontal}`,
+        width,
+        height,
+        ...style,
+      }}
+    />
+  );
+}
 
 export default Spacer;
