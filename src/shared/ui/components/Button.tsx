@@ -1,5 +1,3 @@
-'use client';
-
 /* eslint-disable react/require-default-props */
 
 import {Property} from 'csstype';

@@ -1,5 +1,3 @@
-'use client';
-
 /* eslint-disable react/require-default-props */
 
 import {ChangeEventHandler, CSSProperties, RefObject} from 'react';
